@@ -1,0 +1,117 @@
+import { Split, Invert } from "mdx-deck/layouts";
+import { Appear, Notes } from "mdx-deck";
+
+![](./assets/images/web-assembly-logo.svg)
+
+## O que é e o que muda com ele
+
+---
+
+export default Invert;
+
+# O que é WebAssembly?
+
+---
+
+<p>Uma linguagem nova da Web:</p>
+
+<pre>
+  <code>{`
+(module
+  (func $getAnswer (result i32)
+    i32.const 42)
+  (func (export "getAnswerPlus1") (result i32)
+    call $getAnswer
+    i32.const 1
+    i32.add))
+`}</code>
+</pre>
+
+---
+
+# Por quê?
+
+- Rápida
+- Alvo de compilação
+- Representação binária compacta
+
+---
+
+<small>Por quê?</small>
+
+# Rápida
+
+- Baixo nível
+- Fortemente tipada
+- Sujeita a otimizações de compilador
+
+---
+
+<small>Por quê?</small>
+
+# Alvo de compilação
+
+- Traz novas linguagens pra Web
+  - C, C++, C#, Rust (+ Go, Kotlin, Typescript [e outras](https://github.com/appcypher/awesome-wasm-langs))
+- Integra com ferramentas como LLVM
+
+---
+
+<small>Por quê?</small>
+
+# Representação binária compacta
+
+- Parsear Javascript é custoso
+  - 10 a 30% do tempo de carregamento de páginas ([fonte](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4))
+- Já a representação binária de Wasm:
+  - É mais compacta
+  - É fácil de parsear
+  - Pode ser executada enquanto é baixada, diferente de Javascript
+  - É tão boa que [querem copiar no Javascript](https://github.com/tc39/proposal-binary-ast#faq)
+
+---
+
+### Uma tecnologia que promete trazer performance nativa multiplataforma pro navegador... Parece familiar?
+
+# 🤔
+
+---
+
+export default Invert;
+
+# ⚠ Disclaimer ⚠
+
+## Cenas fortes a seguir
+
+---
+
+![](./assets/images/shockwave.gif)
+
+<Notes>
+  Eu não consigo nem estimar quantas horas eu perdi nessa tela, esperando um
+  jogo carregar no site do Cartoon Network
+</Notes>
+
+---
+
+![](./assets/images/java-applet.jpg)
+
+<Notes>
+  Esse foi meu primeiro contato com a Web, então até que rola saudade, vai
+</Notes>
+
+---
+
+![](./assets/images/unsupported-plugin.png)
+
+---
+
+# Por que é diferente?
+
+- Flash/Java applets:
+  - Não eram parte da Web
+    - Seu site/app com Wasm vai continuar funcionando daqui a 10 anos
+  - Eram uma catástrofe de segurança
+    - Wasm foi feito com segurança em mente
+  - Mudavam constantemente, sem retrocompatibilidade
+    - Wasm evolui de forma lenta e estável, como a Web!

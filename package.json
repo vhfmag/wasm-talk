@@ -1,0 +1,14 @@
+{
+  "name": "wasm-talk",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "mdx-deck src/deck.js",
+    "build": "mdx-deck build src/deck.js"
+  },
+  "dependencies": {
+    "mdx-deck": "^2.0.0",
+    "prettier": "^1.16.4"
+  }
+}
