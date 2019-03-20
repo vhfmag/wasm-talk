@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "mdx-deck src/deck.js",
-    "build": "mdx-deck build src/deck.js"
+    "build": "yarn build:deck && cp -r src/assets dist/assets",
+    "build:deck": "mdx-deck build src/deck.js"
   },
   "dependencies": {
     "mdx-deck": "^2.0.0",
