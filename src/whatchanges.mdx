@@ -63,7 +63,38 @@ export default Invert;
 
 ## Apps desktop na Web
 
-### Pesado demais ou precisa usar o mesmo código? Problema resolvido
+---
+
+<small>Apps desktop na Web</small>
+
+## Autocad Web
+
+![](./assets/images/autocad-web.png)
+
+---
+
+<small>Apps desktop na Web</small>
+
+## Autocad Web
+
+- Já usaram Flash e JS/HTML5
+  - O overhead de reimplementar em JS/ActionScript o que já tinham em C++ era impeditivo
+- Chegaram a compilar a codebase para _asm.js_ e agora usam WebAssembly!
+  - As funcionalidades de base do Autocad são implementadas uma única vez e disponibilizadas em múltiplas plataformas, inclusive a Web
+
+<small>
+  <a href="https://youtu.be/BnYq7JapeDA">Pra saber mais, veja o vídeo</a>
+</small>
+
+---
+
+<small>Apps desktop na Web</small>
+
+## Outros casos de sucesso
+
+- O Figma [também migrou seu web app de _asm.js_ para WebAssembly](https://www.figma.com/blog/webassembly-cut-figmas-load-time-by-3x/) e diminuiram o tempo de carregamento em **mais de 3x**
+- O Google Earth [voltou <strike>pra Web</strike> pro Chrome 🙄 graças ao WebAssembly](https://medium.com/google-earth/earth-on-web-the-road-to-cross-browser-7338e0f46278)
+- [O Chrome dá suporte a PWAs em todas as plataformas desktop](https://developers.google.com/web/progressive-web-apps/desktop), integrando web apps cada vez mais com elas 🎉
 
 <!-- ---
 
@@ -78,3 +109,59 @@ export default Invert;
 export default Invert;
 
 # Parte 2: o que muda fora da Web
+
+### <span><q>WebAssembly is not a way to run code other than JavaScript on the web; WebAssembly is a tiny, embeddable language that you can use almost anywhere</q><br/>— [WebAssembly is more than the web](https://words.steveklabnik.com/webassembly-is-more-than-just-the-web)</span>
+
+---
+
+<small>O que muda fora da Web</small>
+
+## Runtimes JavaScript
+
+### Node.js, Electron, Johnny-Five, React Native...
+
+---
+
+## Performance nativa no Node.js sem compilação
+
+A Mozilla recentemente reimplementou seu módulo [sourcemap-decoder](https://npm.im/sourcemap-decoder) em WebAssembly e [o tornou de 5 a 10x mais rápido](https://hacks.mozilla.org/2018/01/oxidizing-source-maps-with-rust-and-webassembly/):
+
+![](./assets/images/sourcemap-decoder-benchmark.png)
+
+---
+
+## Performance nativa no Electron
+
+[Finda](https://keminglabs.com/finda/), um app Electron para macOS, reporta [nesse post](https://keminglabs.com/blog/building-a-fast-electron-app-with-rust/) como ele usa Rust e WebAssembly para procurar por arquivos, abas abertas, histórico de navegador e muito mais em **menos de 1ms**
+
+---
+
+<small>O que muda fora da Web</small>
+
+## Serverless
+
+<!-- ###  -->
+
+---
+
+<small>O que muda fora da Web</small>
+
+## Portabilidade
+
+<!-- ###  -->
+
+---
+
+<small>O que muda fora da Web</small>
+
+## Blockchain
+
+<!-- ###  -->
+
+---
+
+<small>O que muda fora da Web</small>
+
+## Sistemas embarcados
+
+<!-- ###  -->
