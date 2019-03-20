@@ -9,10 +9,6 @@ export const theme = {
     text: wasmColor,
     code: "#00a5ff"
   },
-  // heading: {
-  //   ...baseTheme.heading,
-  //   maxWidth: "90vw"
-  // },
   a: {
     ...baseTheme.a,
     color: wasmColor
@@ -23,7 +19,7 @@ export const theme = {
   },
   css: {
     ...baseTheme.css,
-    "[name=wrapper] > p, [name=wrapper] > ul, [name=wrapper] > ol, [name=wrapper] > small, [name=wrapper] > center": {
+    "[name=wrapper] > p, [name=wrapper] > ul, [name=wrapper] > ol, [name=wrapper] > small": {
       color: baseTheme.colors.text
     },
     "[name=wrapper] > img": {
