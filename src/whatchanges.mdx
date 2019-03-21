@@ -25,6 +25,8 @@ export default Invert;
 
 ---
 
+<small>O que muda na Web > Novas linguagens</small>
+
 [WebSight](https://github.com/Web-Sight/WebSight), demonstração de uso de [OpenCV](https://opencv.org/) compilado pra WebAssembly:
 
 ![](./assets/images/websightdemo.gif)
@@ -47,7 +49,7 @@ export default Invert;
 
 ---
 
-<small>Caso de estudo da Unity com WebAssembly</small>
+<small>O que muda na Web > Caso de estudo da Unity com WebAssembly</small>
 
 ## Benchmark da Unity (_time to screen_)
 
@@ -55,7 +57,7 @@ export default Invert;
 
 ---
 
-<small>Caso de estudo da Unity com WebAssembly</small>
+<small>O que muda na Web > Caso de estudo da Unity com WebAssembly</small>
 
 ## Benchmark da Unity (_code size_)
 
@@ -69,7 +71,7 @@ export default Invert;
 
 ---
 
-<small>Apps desktop na Web</small>
+<small>O que muda na Web > Apps desktop</small>
 
 ## Autocad Web
 
@@ -77,7 +79,7 @@ export default Invert;
 
 ---
 
-<small>Apps desktop na Web</small>
+<small>O que muda na Web > Apps desktop</small>
 
 ## Autocad Web
 
@@ -92,12 +94,12 @@ export default Invert;
 
 ---
 
-<small>Apps desktop na Web</small>
+<small>O que muda na Web > Apps desktop</small>
 
 ## Outros casos de sucesso
 
 - O Figma [também migrou seu web app de _asm.js_ para WebAssembly](https://www.figma.com/blog/webassembly-cut-figmas-load-time-by-3x/) e diminuiram o tempo de carregamento em **mais de 3x**
-- O Google Earth [voltou <strike>pra Web</strike> pro Chrome 🙄 graças ao WebAssembly](https://medium.com/google-earth/earth-on-web-the-road-to-cross-browser-7338e0f46278)
+- O Google Earth voltou <strike>pra Web</strike> pro Chrome 🙄 [graças ao WebAssembly](https://medium.com/google-earth/earth-on-web-the-road-to-cross-browser-7338e0f46278)
 - [O Chrome dá suporte a PWAs em todas as plataformas desktop](https://developers.google.com/web/progressive-web-apps/desktop), integrando web apps cada vez mais com elas 🎉
 
 <!-- ---
@@ -126,17 +128,19 @@ export default Invert;
 
 ---
 
+<small>Runtimes Javascript</small>
+
 ## Performance nativa no Node.js sem compilação
 
-A Mozilla recentemente reimplementou seu módulo [sourcemap-decoder](https://npm.im/sourcemap-decoder) em WebAssembly e [o tornou de 5 a 10x mais rápido](https://hacks.mozilla.org/2018/01/oxidizing-source-maps-with-rust-and-webassembly/):
+A Mozilla recentemente reimplementou parte de seu módulo [sourcemap-decoder](https://npm.im/sourcemap-decoder) em WebAssembly e [o tornou de 5 a 10x mais rápido](https://hacks.mozilla.org/2018/01/oxidizing-source-maps-with-rust-and-webassembly/):
 
 ![](./assets/images/sourcemap-decoder-benchmark.png)
 
----
+<!-- ---
 
 ## Performance nativa no Electron
 
-[Finda](https://keminglabs.com/finda/), um app Electron para macOS, reporta [nesse post](https://keminglabs.com/blog/building-a-fast-electron-app-with-rust/) como ele usa Rust e WebAssembly para procurar por arquivos, abas abertas, histórico de navegador e muito mais em **menos de 1ms**
+[Finda](https://keminglabs.com/finda/), um app Electron para macOS, reporta [nesse post](https://keminglabs.com/blog/building-a-fast-electron-app-with-rust/) como ele usa Rust e WebAssembly para procurar por arquivos, abas abertas, histórico de navegador e muito mais em **menos de 1ms** -->
 
 ---
 
@@ -144,7 +148,47 @@ A Mozilla recentemente reimplementou seu módulo [sourcemap-decoder](https://npm
 
 ## Serverless
 
-<!-- ###  -->
+---
+
+<small>O que muda fora da Web > Serverless</small>
+
+## Cloudflare Workers
+
+Cada worker é um _isolate_ dentro de um mesmo processo do V8, enquanto na maior parte dos FaaS cada worker é um container
+
+![](./assets/images/cloudflare-isolates.png)
+
+---
+
+<small>O que muda fora da Web > Serverless</small>
+
+## Cloudflare Workers
+
+Isso resolve tempo de resposta pra _cold starts_
+
+![](./assets/images/cloudflare-faas-benchmark.png)
+
+---
+
+<small>O que muda fora da Web > Serverless</small>
+
+## Cloudflare Workers
+
+- Cada novo processo do Node consome 35MB. Cada novo _isolate_, 3MB
+- Elimina custo de _context switching_ do OS (~100ms)
+- Só permitiria a execução de Javascript. Não mais, graças a WebAssembly
+
+---
+
+<small>O que muda fora da Web > Serverless</small>
+
+## Olin
+
+> <q>[Olin](https://github.com/Xe/olin) é uma tentativa de definir um primitivo de operação radicalmente novo para tornar mais fácil raciocinar sobre, fazer deploy e operar serviços orientados a evento e que seja independente do SO e da CPU do computador em que ele esteja rodando.</q><br/>— https://christine.website/blog/olin-1-why-09-1-2018
+
+<!-- esse comentário é um hack pra separar os blockquotes sem ofender o prettier :( -->
+
+> <q>Eu quero que este projeto dure décadas. Eu quero que os binários que eu suba hoje continuem funcionando daqui a 5 anos, assumindo que suas dependências além desse módulo continuem funcionando.</q><br/>— https://github.com/Xe/olin
 
 ---
 
@@ -152,7 +196,42 @@ A Mozilla recentemente reimplementou seu módulo [sourcemap-decoder](https://npm
 
 ## Portabilidade
 
-<!-- ###  -->
+---
+
+<small>O que muda fora da Web > Portabilidade</small>
+
+## Binários portáveis
+
+[![](./assets/images/wasmer-nginx.png)](https://medium.com/@syrusakbary/running-nginx-with-webassembly-6353c02c08ac)
+
+---
+
+<small>O que muda fora da Web > Portabilidade</small>
+
+## Wasmer
+
+[wasmer](https://wasmer.io) é um projeto ambicioso que visa permitir a criação de binários universais, que podem ser [diretamente executados](https://medium.com/wasmer/running-webassembly-100x-faster-%EF%B8%8F-a8237e9a372d) ou [executados por um programa](https://medium.com/wasmer/running-webassembly-from-any-language-5741f6320ccd?source=collection_home---4------0---------------------), de qualquer plataforma
+
+---
+
+<small>O que muda fora da Web > Portabilidade</small>
+
+## Wasmer
+
+> A razão pra usar WebAssembly não é só velocidade, mas também portabilidade em qualquer arquitetura e isolamento de memória de cada processo.
+>
+> Esses são duas grandes inovações que vão ser a base da nova geração de computação na nuvem.
+>
+> — https://medium.com/@syrusakbary/hi-edward-d16345fb04b3
+
+---
+
+<small>O que muda fora da Web > Portabilidade</small>
+
+## Outros
+
+- [nebulet](https://github.com/nebulet/nebulet) — um sistema operacional que roda WebAssembly nativamente
+- [WasmTime](https://github.com/CraneStation/wasmtime) — um _runtime_ de WebAssembly que implementa a [CloudABI](https://cloudabi.org), um POSIX perfeito pro WebAssembly
 
 ---
 
@@ -160,12 +239,32 @@ A Mozilla recentemente reimplementou seu módulo [sourcemap-decoder](https://npm
 
 ## Blockchain
 
-<!-- ###  -->
+---
+
+<small>O que muda fora da Web > Blockchain</small>
+
+## Ethereum
+
+Hoje, o [Ethereum](https://www.ethereum.org/) implementa sua própria [linguagem de programação](https://solidity.readthedocs.io/en/v0.5.6/) e sua própria [máquina virtual](<https://github.com/ethereum/wiki/wiki/Ethereum-Virtual-Machine-(EVM)-Awesome-List#specification>).
+
+A implementação não é ideal, e exige que cada vez mais algoritmos sejam pré-compilados e façam parte da VM em si.
+
+---
+
+<small>O que muda fora da Web > Blockchain</small>
+
+## Ethereum
+
+> Ao invés de usar a EVM, nós agora temos um excelente e eficiente conjunto de instruções, pro qual se pode compilar todos os tipos de linguagens e ter confiança de que ele vai ser executável e igualmente performático em diferentes tipos de plataformas  —  ideal pra aplicações decentralizadas!
+>
+> Não só dApps vão ficar mais rápidos em produção, como a integração do WASM vai tornar o desenvolvimento de _Smart Contracts_ mais acessível para pessoas já familiares com linguagens como Rust e Go.
+>
+> — https://medium.com/zkcapital/webassembly-the-future-of-blockchain-computing-1a0ae28f7e40
 
 ---
 
 <small>O que muda fora da Web</small>
 
-## Sistemas embarcados
+## Outros
 
-<!-- ###  -->
+- Você já pode usar WebAssembly até [em FPGAs](https://github.com/piranna/wasmachine)

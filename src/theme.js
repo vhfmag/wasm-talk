@@ -13,6 +13,12 @@ export const theme = {
     ...baseTheme.a,
     color: wasmColor
   },
+  blockquote: {
+    ...baseTheme.blockquote,
+    borderLeft: "0.25em solid currentColor",
+    paddingLeft: "0.75em",
+    marginLeft: "0"
+  },
   heading: {
     ...baseTheme.heading,
     width: "90vw"
@@ -22,7 +28,7 @@ export const theme = {
     "[name=wrapper] > p, [name=wrapper] > ul, [name=wrapper] > ol, [name=wrapper] > small": {
       color: baseTheme.colors.text
     },
-    "[name=wrapper] > img": {
+    "[name=wrapper] > img, [name=wrapper] > a > img": {
       maxHeight: "50vh",
       width: "90vw",
       objectFit: "contain",
