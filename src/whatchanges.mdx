@@ -23,6 +23,12 @@ export default Invert;
 
 ### Mais opções de linguagem e acesso a novas bibliotecas
 
+<Notes>
+
+Falar de portabilidade de código e acesso a bibliotecas e algoritmos implementadas em outras linguagens sem precisar reimplementar
+
+</Notes>
+
 ---
 
 <small>O que muda na Web > Novas linguagens</small>
@@ -30,6 +36,41 @@ export default Invert;
 [WebSight](https://github.com/Web-Sight/WebSight), demonstração de uso de [OpenCV](https://opencv.org/) compilado pra WebAssembly:
 
 ![](./assets/images/websightdemo.gif)
+
+<Notes>
+
+"Como veremos a seguir, isso também permite ter uma única base de código pra funcionalidades core e só reimplementar _a UI_"
+
+</Notes>
+
+---
+
+<small>O que muda na Web</small>
+
+## Apps desktop na Web
+
+---
+
+<small>O que muda na Web > Apps desktop</small>
+
+## Autocad Web
+
+![](./assets/images/autocad-web.png)
+
+---
+
+<small>O que muda na Web > Apps desktop</small>
+
+## Autocad Web
+
+- Já usaram Flash e JS/HTML5
+  - O overhead de reimplementar em JS/ActionScript o que já tinham em C++ era impeditivo
+- Chegaram a compilar a codebase para _asm.js_ e agora usam WebAssembly!
+  - As funcionalidades de base do Autocad são implementadas uma única vez e disponibilizadas em múltiplas plataformas, _inclusive na Web_
+
+<small>
+  <a href="https://youtu.be/BnYq7JapeDA">Pra saber mais, veja o vídeo</a>
+</small>
 
 ---
 
@@ -43,7 +84,7 @@ export default Invert;
 
 <iframe
   style={{ width: "90vw", height: "90vh", maxWidth: 900 }}
-  src="https://brionv.com/misc/ogv.js/demo2/#file=Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm&player=native&size=360p.av1.webm&source=av1"
+  src="https://brionv.com/misc/ogv.js/demo2/#file=Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm&size=360p.av1.webm&source=av1"
 />
 
 ---
@@ -72,35 +113,6 @@ export default Invert;
 
 ---
 
-<small>O que muda na Web</small>
-
-## Apps desktop na Web
-
----
-
-<small>O que muda na Web > Apps desktop</small>
-
-## Autocad Web
-
-![](./assets/images/autocad-web.png)
-
----
-
-<small>O que muda na Web > Apps desktop</small>
-
-## Autocad Web
-
-- Já usaram Flash e JS/HTML5
-  - O overhead de reimplementar em JS/ActionScript o que já tinham em C++ era impeditivo
-- Chegaram a compilar a codebase para _asm.js_ e agora usam WebAssembly!
-  - As funcionalidades de base do Autocad são implementadas uma única vez e disponibilizadas em múltiplas plataformas, inclusive a Web
-
-<small>
-  <a href="https://youtu.be/BnYq7JapeDA">Pra saber mais, veja o vídeo</a>
-</small>
-
----
-
 <small>O que muda na Web > Apps desktop</small>
 
 ## Outros casos de sucesso
@@ -108,14 +120,6 @@ export default Invert;
 - O Figma [também migrou seu web app de _asm.js_ para WebAssembly](https://www.figma.com/blog/webassembly-cut-figmas-load-time-by-3x/) e diminuiram o tempo de carregamento em **mais de 3x**
 - O Google Earth voltou <strike>pra Web</strike> pro Chrome 🙄 [graças ao WebAssembly](https://medium.com/google-earth/earth-on-web-the-road-to-cross-browser-7338e0f46278)
 - [O Chrome dá suporte a PWAs em todas as plataformas desktop](https://developers.google.com/web/progressive-web-apps/desktop), integrando web apps cada vez mais com elas 🎉
-
-<!-- ---
-
-<small>O que muda na Web</small>
-
-## Algoritmos pesados na Web
-
-### ? -->
 
 ---
 
@@ -143,11 +147,13 @@ A Mozilla recentemente reimplementou parte de seu módulo [sourcemap-decoder](ht
 
 ![](./assets/images/sourcemap-decoder-benchmark.png)
 
-<!-- ---
+---
+
+<small>Runtimes Javascript</small>
 
 ## Performance nativa no Electron
 
-[Finda](https://keminglabs.com/finda/), um app Electron para macOS, reporta [nesse post](https://keminglabs.com/blog/building-a-fast-electron-app-with-rust/) como ele usa Rust e WebAssembly para procurar por arquivos, abas abertas, histórico de navegador e muito mais em **menos de 1ms** -->
+[Finda](https://keminglabs.com/finda/), um app Electron para macOS, reporta [nesse post](https://keminglabs.com/blog/building-a-fast-electron-app-with-rust/) como ele usa Rust e WebAssembly para procurar por arquivos, abas abertas, histórico de navegador e muito mais em **menos de 1ms**
 
 ---
 
