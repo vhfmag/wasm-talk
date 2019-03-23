@@ -13,6 +13,11 @@ export const theme = {
     ...baseTheme.a,
     color: wasmColor
   },
+  pre: {
+    ...baseTheme.pre,
+    overflow: "auto",
+    maxWidth: "90vw"
+  },
   blockquote: {
     ...baseTheme.blockquote,
     borderLeft: "0.25em solid currentColor",
