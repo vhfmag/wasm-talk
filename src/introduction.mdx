@@ -57,7 +57,7 @@ export default Invert;
 
 ---
 
-Uma linguagem nova da WebAssembly
+Uma linguagem nova da Web
 
 <pre>
   <code>{`
@@ -73,7 +73,9 @@ Uma linguagem nova da WebAssembly
 
 <Appear>
   <p>
-    <small>Que eu espero que você não precise escrever na mão</small>
+    <small>
+      <strike>(que eu espero que você não precise escrever na mão)</strike>
+    </small>
   </p>
 </Appear>
 
@@ -114,10 +116,11 @@ Uma linguagem nova da WebAssembly
 
 - Parsear Javascript é custoso
   - 10 a 30% do tempo de carregamento de páginas ([fonte](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4))
+  - [asm.js](https://asmjs.org/) é rápido de executar, mas lento de parsear
 - Já a representação binária de Wasm:
   - É mais compacta
   - É fácil de parsear
-  - Pode ser executada enquanto é baixada, diferente de Javascript
+  - Pode ser executada _enquanto_ é baixada 🤯
   - É tão boa que [querem copiar no Javascript](https://github.com/tc39/proposal-binary-ast#faq)
 
 ---
