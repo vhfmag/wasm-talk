@@ -11,8 +11,10 @@ const images = [
 
 setTimeout(() => {
   images.forEach(url => {
-    const img = new Image();
-    img.src = url;
-    console.log(img);
+    if (typeof Image !== "undefined") {
+      const img = new Image();
+      img.src = url;
+      console.log(img);
+    }
   });
 }, 0);
